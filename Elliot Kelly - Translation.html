@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elliot &amp; Kelly · The Best Man’s Speech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ee; --bg2:#f2ead9; --ink:#2b2a26; --muted:#746e5f; --gold:#a8843a; --gold-soft:#d8c28f;
+  --green:#3d5c48; --card:#fffdf8; --line:#ddd0b4; --shadow:0 10px 40px rgba(80,60,20,.12);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15201a; --bg2:#1b2a22; --ink:#efe8d8; --muted:#aaa592; --gold:#d6b46b; --gold-soft:#6d5c35;
+    --green:#a3c2ae; --card:#1f2e26; --line:#364a3e; --shadow:0 10px 40px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15201a; --bg2:#1b2a22; --ink:#efe8d8; --muted:#aaa592; --gold:#d6b46b; --gold-soft:#6d5c35;
+  --green:#a3c2ae; --card:#1f2e26; --line:#364a3e; --shadow:0 10px 40px rgba(0,0,0,.4);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; color:var(--ink); background:var(--bg);
+  background-image:radial-gradient(1200px 500px at 50% -120px, var(--bg2), transparent 70%);
+  background-repeat:no-repeat;
+  font-family:'Lora',Georgia,'Times New Roman',serif;
+  font-size:clamp(17px,4.4vw,20px); line-height:1.75;
+}
+.wrap{max-width:38rem;margin:0 auto;padding:2rem 1.4rem 3rem}
+.script{font-family:'Pinyon Script','Snell Roundhand','Brush Script MT',cursive;font-weight:400}
+.display{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif}
+
+/* hero */
+.hero{text-align:center;padding:1.5rem 0 1rem}
+.crest{display:flex;align-items:center;justify-content:center;gap:.6rem;color:var(--gold)}
+.sprig{width:min(30vw,8.5rem);height:auto;flex:none}
+.sprig.flip{transform:scaleX(-1)}
+.mono{
+  width:5.4rem;height:5.4rem;border-radius:50%;display:grid;place-items:center;flex:none;
+  border:1px solid var(--gold);box-shadow:inset 0 0 0 5px var(--bg),inset 0 0 0 6px var(--gold-soft);
+  font-size:2.1rem;color:var(--gold);line-height:1;
+}
+.names{font-size:clamp(2.9rem,13vw,4.6rem);line-height:1.05;margin:.9rem 0 .1rem;color:var(--ink)}
+.sub{letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:var(--muted);margin:.4rem 0 0}
+.by{font-style:italic;color:var(--muted);margin:.2rem 0 0}
+.divider{display:flex;align-items:center;gap:.8rem;color:var(--gold);margin:1.6rem auto 1.2rem;max-width:20rem}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-soft),transparent)}
+.divider i{width:.5rem;height:.5rem;background:var(--gold);transform:rotate(45deg);display:block}
+
+/* language switch */
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:.2rem;background:var(--card);margin-top:1.1rem}
+.lang button{
+  font:inherit;font-size:.85rem;letter-spacing:.06em;border:0;background:transparent;color:var(--muted);
+  padding:.35rem 1.1rem;border-radius:999px;cursor:pointer;min-height:2.4rem;
+}
+.lang button[aria-pressed="true"]{background:var(--green);color:var(--card)}
+.lang button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* speech */
+.sec{margin-top:2.6rem}
+.sec h2{
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.7rem;text-align:center;
+  color:var(--green);margin:0 0 1.3rem;letter-spacing:.02em;
+}
+.sec h2::after{content:"";display:block;width:2.6rem;height:1px;background:var(--gold);margin:.55rem auto 0}
+.sec p{margin:0 0 1.05rem}
+.poem{margin:1.6rem 0;text-align:center;font-style:italic;color:var(--ink)}
+.poem{font-size:.95em}
+.poem div{display:block;text-wrap:balance}
+.toast{margin-top:2rem;text-align:center}
+.finale{
+  text-align:center;font-size:clamp(2.2rem,10vw,3.2rem);color:var(--gold);line-height:1.2;margin:.4rem 0 0;
+}
+.sec .fade{animation:rise .6s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sec .fade{animation:none}}
+
+.foot{text-align:center;margin-top:3.2rem;color:var(--muted);font-size:.9rem}
+.foot a{color:var(--green);text-underline-offset:3px;cursor:pointer}
+
+/* card view */
+.cardview{display:none;text-align:center}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:1.2rem;box-shadow:var(--shadow);
+  padding:2rem 1.4rem 1.8rem;position:relative;margin-top:1rem;
+}
+.card::before{content:"";position:absolute;inset:.55rem;border:1px solid var(--gold-soft);border-radius:.85rem;pointer-events:none}
+.card .names{font-size:clamp(2.6rem,12vw,4rem);margin-top:.6rem}
+.qrtile{color:#1d3b2f;display:inline-block;background:#fff;padding:14px;border-radius:12px;border:1px solid var(--line);margin:1.2rem 0 .6rem;line-height:0}
+.qrtile img,.qrtile canvas{width:min(62vw,15rem)!important;height:auto!important}
+.scan{letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:var(--muted);margin:.4rem 0 0;line-height:1.7}
+.scan b{display:block;color:var(--green);font-weight:500}
+.tools{margin-top:1.4rem;font-size:.9rem;color:var(--muted)}
+.tools label{display:block;margin-bottom:.35rem}
+.tools input{
+  width:100%;font:inherit;font-size:.85rem;padding:.6rem .8rem;border:1px solid var(--line);border-radius:.6rem;
+  background:var(--card);color:var(--ink);
+}
+.btn{
+  font:inherit;font-size:.9rem;border:1px solid var(--green);background:var(--green);color:var(--card);
+  padding:.55rem 1.3rem;border-radius:999px;cursor:pointer;margin:.9rem .25rem 0;min-height:2.6rem;
+}
+.btn.ghost{background:transparent;color:var(--green)}
+body.card-mode #speechView{display:none}
+body.card-mode #cardView{display:block}
+
+@media print{
+  body{background:#fff;color:#000;background-image:none}
+  .noprint{display:none!important}
+  .card{box-shadow:none;border:1px solid #bbb}
+  :root{padding:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="crest" aria-hidden="true">
+      <svg class="sprig" viewBox="0 0 200 80" fill="currentColor"><path d="M4 72 Q70 66 196 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><g id="lv"><ellipse cx="34" cy="62" rx="11" ry="4.2" transform="rotate(-38 34 62)"/><ellipse cx="38" cy="70" rx="11" ry="4.2" transform="rotate(14 38 70)"/><ellipse cx="68" cy="52" rx="11" ry="4.2" transform="rotate(-45 68 52)"/><ellipse cx="72" cy="63" rx="11" ry="4.2" transform="rotate(8 72 63)"/><ellipse cx="104" cy="42" rx="11" ry="4.2" transform="rotate(-50 104 42)"/><ellipse cx="108" cy="54" rx="11" ry="4.2" transform="rotate(2 108 54)"/><ellipse cx="140" cy="31" rx="10" ry="4" transform="rotate(-55 140 31)"/><ellipse cx="145" cy="43" rx="10" ry="4" transform="rotate(-4 145 43)"/><ellipse cx="176" cy="17" rx="8" ry="3.4" transform="rotate(-62 176 17)"/></g></svg>
+      <div class="mono script">E&amp;K</div>
+      <svg class="sprig flip" viewBox="0 0 200 80" fill="currentColor"><path d="M4 72 Q70 66 196 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><use href="#lv"/></svg>
+    </div>
+    <h1 class="names script" style="font-weight:400">Elliot &amp; Kelly</h1>
+    <p class="sub" id="subtitle">The Best Man’s Speech</p>
+    <p class="by" id="by">by Ash</p>
+    <div class="divider noprint" aria-hidden="true"><i></i></div>
+  </header>
+
+  <main id="speechView">
+    <div style="text-align:center">
+      <div class="lang noprint" role="group" aria-label="Language">
+        <button type="button" id="btn-en" aria-pressed="true">English</button>
+        <button type="button" id="btn-fr" aria-pressed="false">Français</button>
+      </div>
+    </div>
+    <div id="speech"></div>
+    <p class="foot noprint"><span id="withlove">With love, Ash</span><br><a id="toCard">QR card</a></p>
+  </main>
+
+  <section id="cardView" class="cardview">
+    <div class="card">
+      <div class="mono script" style="margin:0 auto">E&amp;K</div>
+      <div class="names script">Elliot &amp; Kelly</div>
+      <p class="sub">The Best Man’s Speech<br>Le discours du témoin</p>
+      <div class="qrtile"><div id="qr"></div></div>
+      <p class="scan"><b>Scan to read</b>Scannez pour lire</p>
+    </div>
+    <div class="tools noprint">
+      <label for="linkInput">Link inside the QR code</label>
+      <input id="linkInput" type="url" inputmode="url" autocomplete="off" spellcheck="false">
+      <button class="btn" id="printBtn" type="button">Print this card</button>
+      <button class="btn ghost" id="backBtn" type="button">Back to the speech</button>
+    </div>
+  </section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const DATA = {"en":[{"title":"Good evening","items":[{"t":"p","x":"Good evening, everyone. Bonsoir."},{"t":"p","x":"For those of you who don’t know me, I’m Ash. I’m trying to make everyone feel as welcome as possible, so I thought I’d wear my cowboy hat. Hopefully this helps. I’ve known Elliot for almost twenty years, and before I start I’d like to apologise in the style of the groom."},{"t":"p","x":"Sorry. Sorry, sorry. Mate. Mate, mate, sorry. Sorry."},{"t":"p","x":"If that doesn’t make sense now, don’t worry. By the end of this speech, hopefully it will."},{"t":"p","x":"I’ve known Elliot since we met at a Year 6 football tournament. We ended up at the same secondary school and were put in the same house on day one."},{"t":"p","x":"We bonded over the fact that we were both actually from Aylesbury."},{"t":"p","x":"Saying that out loud, I’m not entirely sure that’s something we should be proud of."},{"t":"p","x":"For those who don’t know him, Elliot is a complicated man."},{"t":"p","x":"He’s French and Scottish, but somehow sounds completely English, which is particularly unfortunate, because being mistaken for English is probably his greatest fear."},{"t":"p","x":"He has the stubbornness of a Scot, the temper of a Frenchman, and the apologetic nature of an Englishman."},{"t":"p","x":"He’ll tell you you’re an idiot, explain exactly why you’re an idiot, and then apologise for having done so."},{"t":"p","x":"When I first met him, he was one of the most miserable children I’d ever encountered."},{"t":"p","x":"And the remarkable thing is that, twenty years later, absolutely nothing has changed."},{"t":"p","x":"He’s still incredibly miserable."},{"t":"p","x":"The difference is that somewhere along the way, he became incredibly funny."},{"t":"p","x":"Elliot has always stood out from the crowd."},{"t":"p","x":"Not because of his personality."},{"t":"p","x":"Mostly because of the size of his head."},{"t":"p","x":"Now I’d like to make clear that this isn’t bullying."},{"t":"p","x":"This is science."},{"t":"p","x":"Elliot genuinely has an abnormally large head."},{"t":"p","x":"At school he was easy to spot from anywhere on a rugby pitch. Not because of the bright yellow boots he insisted on wearing."},{"t":"p","x":"It was because attached to those bright yellow boots was a head roughly the size of a small moon."},{"t":"p","x":"Fortunately, he’s grown into it over the years."},{"t":"p","x":"Not physically."},{"t":"p","x":"Just emotionally."}]},{"title":"Growing up","items":[{"t":"p","x":"One of my favourite memories of Elliot comes from a boys’ holiday when we were about eighteen."},{"t":"p","x":"At the time, Elliot was trying to contact his then girlfriend."},{"t":"p","x":"Being the good friend that I am, I stole his phone."},{"t":"p","x":"Some people would call that an invasion of privacy."},{"t":"p","x":"I prefer to think of it as an early intervention programme."},{"t":"p","x":"Unfortunately, Elliot didn’t see it that way."},{"t":"p","x":"He became absolutely furious and punched a toilet seat so hard he snapped it in two."},{"t":"p","x":"The toilet seat had done absolutely nothing wrong."},{"t":"p","x":"And rather than own up to it, he hid the evidence in a cupboard and hoped nobody would ever find it."},{"t":"p","x":"Now, Elliot, I’d like to take this opportunity to formally apologise."},{"t":"p","x":"I’m sorry for stealing your phone."},{"t":"p","x":"But if I hadn’t, that relationship might have worked out."},{"t":"p","x":"You might never have met Kelly."},{"t":"p","x":"And we might all be here celebrating a completely different wedding."},{"t":"p","x":"So actually, I’d like a thank you."},{"t":"p","x":"Everything I did, I did for Kelly."}]},{"title":"The ski trip","items":[{"t":"p","x":"Now, you’d think after twenty years of friendship I’d have learned not to get involved in Elliot’s affairs."},{"t":"p","x":"But this year we decided to do two weeks of skiing together."},{"t":"p","x":"And Elliot takes skiing very seriously."},{"t":"p","x":"It might be the only French thing about him."},{"t":"p","x":"One day after lunch, we lost Elliot."},{"t":"p","x":"Fortunately, his head appeared over the horizon about thirty seconds before the rest of him, so we knew something had gone wrong."},{"t":"p","x":"Eventually he arrived carrying a pair of skis."},{"t":"p","x":"The only problem was they weren’t his."},{"t":"p","x":"Elliot had somehow stolen another set of skis."},{"t":"p","x":"Not similar skis."},{"t":"p","x":"Not skis he thought might be his."},{"t":"p","x":"An entirely different set of skis."},{"t":"p","x":"And the best part was he’d already tried them on."},{"t":"p","x":"They didn’t fit."},{"t":"p","x":"Now most people would think, “These don’t fit. Perhaps I’ve made a mistake.”"},{"t":"p","x":"No. Not Elliot."},{"t":"p","x":"Elliot decided the obvious explanation was that Kelly had somehow swapped their skis."},{"t":"p","x":"Elliot was making his way up the mountain preparing to accuse his future wife. Abusing everyone in his path who tried to stop him."},{"t":"p","x":"The confidence was extraordinary."},{"t":"p","x":"The logic less so."},{"t":"p","x":"I skied down to exactly where we had left lunch, and there was a confused Englishman standing at the bottom of the mountain wondering where his skis had gone. Elliot appeared. And then came the apologies."},{"t":"p","x":"“Sorry, mate. Sorry. Sorry, mate. Really, really sorry.”"},{"t":"p","x":"He apologised so many times that I think the poor bloke ended up feeling worse for Elliot than he did about losing his skis."},{"t":"p","x":"And that’s Elliot in a nutshell."},{"t":"p","x":"A man who can steal your skis, blame his fiancée (now wife), and then apologise so relentlessly that you end up comforting him."},{"t":"p","x":"Talking about comforting, I rang Elliot last week just to check in on him, as good friends do."},{"t":"p","x":"Instead, he told me he’d reached the stage where he was starting to question certain decisions about the wedding."},{"t":"p","x":"Now, I’d been through the process."},{"t":"p","x":"I felt uniquely qualified to offer some advice."},{"t":"p","x":"So I said:"},{"t":"p","x":"“Mate, for your own sake, it’s far too late to start putting your input now.”"},{"t":"p","x":"“I don’t think questioning things now is worth it”"},{"t":"p","x":"And fortunately, Kelly had already organised absolutely everything by that point anyway."},{"t":"p","x":"Which brings me nicely onto Kelly."}]},{"title":"Kelly","items":[{"t":"p","x":"May I say that you look incredible, Elliot is a very lucky man."},{"t":"p","x":"Kelly and Elliot met while studying International Development here in Edinburgh."},{"t":"p","x":"Both determined to make the world a better place."},{"t":"p","x":"Kelly now works for a large corporate and Elliot works for one of the world’s largest gambling companies."},{"t":"p","x":"So it’s probably fair to say the developing world will have to wait a little longer."},{"t":"p","x":"For Kelly’s hen do, Elliot was asked to describe Kelly in three words."},{"t":"p","x":"Now most grooms would say something romantic."},{"t":"p","x":"Beautiful. Intelligent. Kind."},{"t":"p","x":"Elliot thought about it carefully and came back with:"},{"t":"p","x":"“Pathetic. Whimsical. Dramatic.”"},{"t":"p","x":"Which is either the worst description of a future wife ever given, or somehow one of the most accurate."},{"t":"p","x":"As his best man, I thought I’d just clarify what he meant by this, Kelly. You’re endearingly theatrical, wonderfully expressive, playfully unpredictable."},{"t":"p","x":"Did I get that right, Elliot?"},{"t":"p","x":"But there may be some truth in it."},{"t":"p","x":"Kelly willingly follows Elliot skiing."},{"t":"p","x":"She believes him when he says, “The next run is definitely blue.”"},{"t":"p","x":"She voluntarily eats chillies that would be considered chemical weapons in most countries."},{"t":"p","x":"And she once got hit in the head by a ball at Wembley and carried on as though absolutely nothing had happened."},{"t":"p","x":"Which confirms what we all knew, that she is the toughest person in the relationship."},{"t":"p","x":"And that’s one of the things I admire most about the two of you."},{"t":"p","x":"You somehow just work."},{"t":"p","x":"Elliot loves cold holidays."},{"t":"p","x":"Kelly wants sunshine."},{"t":"p","x":"Elliot loves cooking."},{"t":"p","x":"Kelly loves that Elliot loves cooking."},{"t":"p","x":"And together they’ve created what may be the most efficient relationship in history."},{"t":"p","x":"Elliot makes the food. Kelly buys the drinks. Everybody wins. Especially Elliot."}]},{"title":"Padel","items":[{"t":"p","x":"A little anecdote: Char and I regularly play padel with Elliot and Kelly."},{"t":"p","x":"Kelly arrives with the full force of America."},{"t":"p","x":"No diplomacy."},{"t":"p","x":"Unlimited ammunition."},{"t":"p","x":"And a foreign policy based entirely around hitting things."},{"t":"p","x":"If you don’t know padel, the goal is that you aim for the gap."},{"t":"p","x":"Not Kelly, she aims for the person."},{"t":"p","x":"And Elliot, Elliot aims for Char’s head."},{"t":"p","x":"They’re a match made in heaven."},{"t":"p","x":"It’s genuinely beautiful to watch."},{"t":"p","x":"Terrifying."},{"t":"p","x":"But beautiful."}]},{"title":"A few words for Kelly","items":[{"t":"p","x":"But jokes aside, Kelly, there’s something I’d genuinely like to say."},{"t":"p","x":"I’ve known Elliot for nearly twenty years."},{"t":"p","x":"I’ve seen him through school, holidays, stag dos, questionable decisions, and one particularly aggressive dispute with a toilet seat."},{"t":"p","x":"And since you’ve been in his life, I’ve seen a real change in him."},{"t":"p","x":"He’s happier..."},{"t":"p","x":"He’s more settled..."},{"t":"p","x":"He’s more content... in fact so content that it was a worry he might not fit in his kilt."},{"t":"p","x":"All jokes aside, you bring out the very best in him."},{"t":"p","x":"And I think everybody who knows the two of you can see that."},{"t":"p","x":"Thank you for making Elliot so happy."},{"t":"p","x":"And thank you for becoming such a big part of all of our lives."}]},{"title":"And Elliot","items":[{"t":"p","x":"And Elliot, I’ve spent most of this speech taking the piss out of you, which is only fair because you’ve done the same to me for almost twenty years."},{"t":"p","x":"But the truth is you’re one of the most loyal people I know."},{"t":"p","x":"If I need you, I know you’ll be there."},{"t":"p","x":"Particularly if that need somehow involves a pub."},{"t":"p","x":"But he’ll be there."},{"t":"p","x":"When Char and I got married, Elliot wrote us a poem."},{"t":"p","x":"Which surprised me because up until that point I’d mostly known him as a man who communicated through sarcasm and mild disappointment."},{"t":"p","x":"But that’s who he is."},{"t":"p","x":"Beneath all the wit, stubbornness and misery, he’s thoughtful."},{"t":"p","x":"He’s generous."},{"t":"p","x":"And he’s a friend people are lucky to have."},{"t":"p","x":"I’m incredibly lucky to call him one of my best friends."},{"t":"p","x":"And standing here today, watching you marry the woman you love, is a real privilege."},{"t":"p","x":"Twenty years ago I met one of the most miserable children I’d ever known."},{"t":"p","x":"Today you’re still one of the most miserable people I know."},{"t":"p","x":"You’re just a much happier one."},{"t":"p","x":"I wanted to repay the gesture and finish with a poem."}]},{"title":"A poem","items":[{"t":"poem","lines":["Elliot swears that the next run’s a blue,","And Kelly, God help her, believes it’s true.","Halfway down, she’s screaming his name,","He’s at the bar, with no sense of shame."]},{"t":"poem","lines":["But Kelly’s no victim, she’s tougher than most,","She’ll eat a Carolina Reaper on toast.","I tried the same dollop and wept like a child,","She laughed, snorted, and called it mild."]},{"t":"poem","lines":["Now they might cross the pond, to Carolina’s sun,","Where he’ll say “sorry, mate” to everyone.","But an ocean’s just water, and you’re not rid of me,","Mate, mate, mate, mate, wherever you may be."]},{"t":"poem","lines":["So here’s to the pair, and the life you have planned,","May your skis be your own and a proper job in hand."]},{"t":"toast","x":"Ladies and gentlemen, please raise your glasses to the bride and groom…"},{"t":"finale","x":"Elliot and Kelly!"}]}],"fr":[{"title":"Bonsoir","items":[{"t":"p","x":"Bonsoir à tous."},{"t":"p","x":"Pour ceux qui ne me connaissent pas, je suis Ash. J’essaie de faire en sorte que chacun se sente le plus accueilli possible, alors j’ai pensé mettre mon chapeau de cowboy. En espérant que ça aide. Je connais Elliot depuis presque vingt ans, et avant de commencer, je voudrais m’excuser à la manière du marié."},{"t":"p","x":"Sorry. Sorry, sorry. Mate. Mate, mate, sorry. Sorry."},{"t":"p","x":"Si ça n’a pas de sens pour l’instant, ne vous inquiétez pas. D’ici la fin de ce discours, j’espère que ça en aura."},{"t":"p","x":"Je connais Elliot depuis un tournoi de foot, en Year 6, l’équivalent de notre CM2. On s’est retrouvés dans le même établissement secondaire, et dans la même « house » dès le premier jour."},{"t":"p","x":"Ce qui nous a rapprochés, c’est que nous venions tous les deux, en réalité, d’Aylesbury."},{"t":"p","x":"En le disant à voix haute, je ne suis pas certain que ce soit quelque chose dont on doive être fiers."},{"t":"p","x":"Pour ceux qui ne le connaissent pas, Elliot est un homme compliqué."},{"t":"p","x":"Il est français et écossais, mais il parle comme un Anglais parfait, ce qui est particulièrement regrettable, car se faire prendre pour un Anglais est sans doute sa plus grande peur."},{"t":"p","x":"Il a l’entêtement d’un Écossais, le sale caractère d’un Français et la manie de s’excuser d’un Anglais."},{"t":"p","x":"Il vous dira que vous êtes un idiot, vous expliquera exactement pourquoi vous êtes un idiot, puis s’excusera de l’avoir fait."},{"t":"p","x":"Quand je l’ai rencontré, c’était l’un des enfants les plus moroses que j’aie jamais croisés."},{"t":"p","x":"Et le plus remarquable, c’est que, vingt ans plus tard, absolument rien n’a changé."},{"t":"p","x":"Il est toujours incroyablement morose."},{"t":"p","x":"La différence, c’est qu’en chemin, il est devenu incroyablement drôle."},{"t":"p","x":"Elliot s’est toujours démarqué de la foule."},{"t":"p","x":"Pas à cause de sa personnalité."},{"t":"p","x":"Surtout à cause de la taille de sa tête."},{"t":"p","x":"Je tiens à préciser que ce n’est pas du harcèlement."},{"t":"p","x":"C’est de la science."},{"t":"p","x":"Elliot a réellement une tête anormalement grosse."},{"t":"p","x":"À l’école, on le repérait de n’importe où sur un terrain de rugby. Pas à cause des chaussures jaune vif qu’il tenait absolument à porter."},{"t":"p","x":"C’était parce qu’à ces chaussures jaune vif était attachée une tête à peu près grosse comme une petite lune."},{"t":"p","x":"Heureusement, avec les années, il a fini par la rattraper."},{"t":"p","x":"Pas physiquement."},{"t":"p","x":"Seulement émotionnellement."}]},{"title":"En grandissant","items":[{"t":"p","x":"L’un de mes souvenirs préférés d’Elliot date de vacances entre garçons, quand nous avions environ dix-huit ans."},{"t":"p","x":"À l’époque, Elliot essayait de joindre sa petite amie d’alors."},{"t":"p","x":"En bon ami que je suis, je lui ai volé son téléphone."},{"t":"p","x":"Certains appelleraient ça une atteinte à la vie privée."},{"t":"p","x":"Je préfère y voir un programme d’intervention précoce."},{"t":"p","x":"Malheureusement, Elliot ne l’a pas vu de cet œil."},{"t":"p","x":"Il est devenu absolument furieux et a frappé une lunette de toilettes si fort qu’il l’a cassée en deux."},{"t":"p","x":"La lunette des toilettes n’avait absolument rien fait de mal."},{"t":"p","x":"Et plutôt que d’avouer, il a caché les preuves dans un placard en espérant que personne ne les retrouverait jamais."},{"t":"p","x":"Alors, Elliot, je profite de l’occasion pour m’excuser formellement."},{"t":"p","x":"Je suis désolé de t’avoir volé ton téléphone."},{"t":"p","x":"Mais si je ne l’avais pas fait, cette relation aurait peut-être fonctionné."},{"t":"p","x":"Tu n’aurais peut-être jamais rencontré Kelly."},{"t":"p","x":"Et nous serions peut-être tous ici à célébrer un tout autre mariage."},{"t":"p","x":"Alors en fait, j’aimerais un merci."},{"t":"p","x":"Tout ce que j’ai fait, je l’ai fait pour Kelly."}]},{"title":"Le ski","items":[{"t":"p","x":"Maintenant, on pourrait penser qu’après vingt ans d’amitié, j’aurais appris à ne pas me mêler des affaires d’Elliot."},{"t":"p","x":"Mais cette année, nous avons décidé de faire deux semaines de ski ensemble."},{"t":"p","x":"Et Elliot prend le ski très au sérieux."},{"t":"p","x":"C’est peut-être la seule chose française chez lui."},{"t":"p","x":"Un jour, après le déjeuner, nous avons perdu Elliot."},{"t":"p","x":"Heureusement, sa tête est apparue à l’horizon environ trente secondes avant le reste de lui, si bien que nous avons compris que quelque chose avait mal tourné."},{"t":"p","x":"Il a fini par arriver, portant une paire de skis."},{"t":"p","x":"Le seul problème, c’est que ce n’étaient pas les siens."},{"t":"p","x":"Elliot avait, je ne sais comment, volé une autre paire de skis."},{"t":"p","x":"Pas des skis semblables."},{"t":"p","x":"Pas des skis qu’il pensait peut-être être les siens."},{"t":"p","x":"Une paire de skis entièrement différente."},{"t":"p","x":"Et le meilleur, c’est qu’il les avait déjà chaussés."},{"t":"p","x":"Ils ne lui allaient pas."},{"t":"p","x":"La plupart des gens se diraient : « Ils ne me vont pas. J’ai peut-être fait une erreur. »"},{"t":"p","x":"Non. Pas Elliot."},{"t":"p","x":"Elliot a décidé que l’explication évidente était que Kelly avait, d’une manière ou d’une autre, échangé leurs skis."},{"t":"p","x":"Elliot remontait la montagne, prêt à accuser sa future épouse, et insultait tous ceux qui, sur son chemin, tentaient de l’arrêter."},{"t":"p","x":"L’assurance était extraordinaire."},{"t":"p","x":"La logique, un peu moins."},{"t":"p","x":"Je suis redescendu à ski exactement là où nous avions déjeuné : un Anglais perplexe se tenait au pied de la montagne, se demandant où étaient passés ses skis. Elliot est arrivé. Et puis sont venues les excuses."},{"t":"p","x":"« Sorry, mate. Sorry. Sorry, mate. Really, really sorry. »"},{"t":"p","x":"Il s’est tant excusé que je crois que le pauvre type a fini par se sentir plus désolé pour Elliot que pour la perte de ses skis."},{"t":"p","x":"Et voilà Elliot tout craché."},{"t":"p","x":"Un homme capable de vous voler vos skis, d’en accuser sa fiancée (désormais sa femme), puis de s’excuser avec une telle insistance que vous finissez par le consoler."},{"t":"p","x":"En parlant de consoler, j’ai appelé Elliot la semaine dernière, juste pour prendre de ses nouvelles, comme le font les bons amis."},{"t":"p","x":"Au lieu de ça, il m’a dit qu’il en était arrivé au stade où il commençait à remettre en question certaines décisions concernant le mariage."},{"t":"p","x":"Moi, j’étais déjà passé par là."},{"t":"p","x":"Je me sentais particulièrement qualifié pour donner un conseil."},{"t":"p","x":"Alors je lui ai dit :"},{"t":"p","x":"« Mate, pour ton propre bien, il est beaucoup trop tard pour commencer à donner ton avis maintenant. »"},{"t":"p","x":"« Je ne pense pas que remettre les choses en question maintenant en vaille la peine. »"},{"t":"p","x":"Et heureusement, Kelly avait de toute façon déjà tout organisé, absolument tout, à ce stade."},{"t":"p","x":"Ce qui m’amène tout naturellement à Kelly."}]},{"title":"Kelly","items":[{"t":"p","x":"Permets-moi de dire que tu es magnifique ; Elliot est un homme très chanceux."},{"t":"p","x":"Kelly et Elliot se sont rencontrés en étudiant le développement international ici, à Édimbourg."},{"t":"p","x":"Tous deux déterminés à faire du monde un endroit meilleur."},{"t":"p","x":"Kelly travaille aujourd’hui pour une grande entreprise et Elliot pour l’une des plus grandes sociétés de jeux d’argent au monde."},{"t":"p","x":"On peut donc raisonnablement dire que le monde en développement devra attendre encore un peu."},{"t":"p","x":"Pour l’enterrement de vie de jeune fille de Kelly, on a demandé à Elliot de décrire Kelly en trois mots."},{"t":"p","x":"La plupart des futurs mariés auraient dit quelque chose de romantique."},{"t":"p","x":"Belle. Intelligente. Gentille."},{"t":"p","x":"Elliot y a réfléchi attentivement et est revenu avec :"},{"t":"p","x":"« Pathétique. Fantasque. Dramatique. »"},{"t":"p","x":"Ce qui est soit la pire description d’une future épouse jamais donnée, soit, d’une certaine façon, l’une des plus justes."},{"t":"p","x":"En tant que témoin, j’ai pensé clarifier ce qu’il voulait dire, Kelly : tu es théâtrale de façon attachante, merveilleusement expressive, espiègle dans ton imprévisibilité."},{"t":"p","x":"Est-ce que j’ai bien compris, Elliot ?"},{"t":"p","x":"Mais il y a peut-être une part de vérité là-dedans."},{"t":"p","x":"Kelly suit Elliot au ski de son plein gré."},{"t":"p","x":"Elle le croit quand il dit : « La prochaine piste est forcément bleue. »"},{"t":"p","x":"Elle mange volontairement des piments qui seraient considérés comme des armes chimiques dans la plupart des pays."},{"t":"p","x":"Et un jour, elle a reçu un ballon en pleine tête à Wembley et a continué comme si de rien n’était."},{"t":"p","x":"Ce qui confirme ce que nous savions tous : c’est elle, la personne la plus solide du couple."},{"t":"p","x":"Et c’est l’une des choses que j’admire le plus chez vous deux."},{"t":"p","x":"Ça marche, tout simplement."},{"t":"p","x":"Elliot adore les vacances au froid."},{"t":"p","x":"Kelly veut du soleil."},{"t":"p","x":"Elliot adore cuisiner."},{"t":"p","x":"Kelly adore qu’Elliot adore cuisiner."},{"t":"p","x":"Et ensemble, ils ont créé ce qui est peut-être la relation la plus efficace de l’histoire."},{"t":"p","x":"Elliot prépare à manger. Kelly paie les verres. Tout le monde y gagne. Surtout Elliot."}]},{"title":"Padel","items":[{"t":"p","x":"Petite anecdote : Char et moi jouons régulièrement au padel avec Elliot et Kelly."},{"t":"p","x":"Kelly arrive avec toute la force de l’Amérique."},{"t":"p","x":"Aucune diplomatie."},{"t":"p","x":"Des munitions illimitées."},{"t":"p","x":"Et une politique étrangère entièrement fondée sur le fait de taper sur des choses."},{"t":"p","x":"Si vous ne connaissez pas le padel, le but est de viser l’espace libre entre les adversaires."},{"t":"p","x":"Pas Kelly : elle, elle vise la personne."},{"t":"p","x":"Et Elliot, lui, il vise la tête de Char."},{"t":"p","x":"Ils sont faits l’un pour l’autre."},{"t":"p","x":"C’est vraiment beau à voir."},{"t":"p","x":"Terrifiant."},{"t":"p","x":"Mais beau."}]},{"title":"Quelques mots pour Kelly","items":[{"t":"p","x":"Mais blague à part, Kelly, il y a quelque chose que je voudrais vraiment te dire."},{"t":"p","x":"Je connais Elliot depuis près de vingt ans."},{"t":"p","x":"Je l’ai accompagné à l’école, en vacances, aux enterrements de vie de garçon, dans des décisions discutables, et lors d’un différend particulièrement agressif avec une lunette de toilettes."},{"t":"p","x":"Et depuis que tu es dans sa vie, j’ai vu en lui un vrai changement."},{"t":"p","x":"Il est plus heureux……."},{"t":"p","x":"Il est plus posé….."},{"t":"p","x":"Il est plus comblé….. tellement comblé, en fait, qu’on a craint qu’il ne rentre plus dans son kilt."},{"t":"p","x":"Blague à part, tu fais ressortir le meilleur de lui."},{"t":"p","x":"Et je pense que tous ceux qui vous connaissent tous les deux peuvent le voir."},{"t":"p","x":"Merci de rendre Elliot si heureux."},{"t":"p","x":"Et merci de devenir une si grande part de nos vies à tous."}]},{"title":"Et Elliot","items":[{"t":"p","x":"Et Elliot, j’ai passé la plus grande partie de ce discours à me payer ta tête, ce qui est bien normal puisque tu fais pareil avec moi depuis presque vingt ans."},{"t":"p","x":"Mais la vérité, c’est que tu es l’une des personnes les plus loyales que je connaisse."},{"t":"p","x":"Si j’ai besoin de toi, je sais que tu seras là."},{"t":"p","x":"Surtout si ce besoin implique, d’une manière ou d’une autre, un pub."},{"t":"p","x":"Mais il sera là."},{"t":"p","x":"Quand Char et moi nous sommes mariés, Elliot nous a écrit un poème."},{"t":"p","x":"Ce qui m’a surpris, parce que jusque-là, je le connaissais surtout comme un homme qui communiquait par le sarcasme et une légère déception."},{"t":"p","x":"Mais c’est ça, Elliot."},{"t":"p","x":"Sous toute cette verve, cet entêtement et cette morosité, il est attentionné."},{"t":"p","x":"Il est généreux."},{"t":"p","x":"Et c’est un ami qu’on a de la chance d’avoir."},{"t":"p","x":"J’ai énormément de chance de pouvoir l’appeler l’un de mes meilleurs amis."},{"t":"p","x":"Et me tenir ici aujourd’hui, à te regarder épouser la femme que tu aimes, est un vrai privilège."},{"t":"p","x":"Il y a vingt ans, j’ai rencontré l’un des enfants les plus moroses que j’aie jamais connus."},{"t":"p","x":"Aujourd’hui, tu es toujours l’une des personnes les plus moroses que je connaisse."},{"t":"p","x":"Tu es simplement un morose beaucoup plus heureux."},{"t":"p","x":"J’ai voulu te rendre la pareille et terminer par un poème."}]},{"title":"Un poème","items":[{"t":"poem","lines":["Elliot jure que la prochaine piste est bleue,","Et Kelly, que Dieu lui vienne en aide, le croit pour de vrai.","À mi-descente, elle hurle son nom,","Lui est déjà au bar, sans la moindre honte."]},{"t":"poem","lines":["Mais Kelly n’a rien d’une victime, elle est plus coriace que la plupart,","Elle mangerait un Carolina Reaper sur du pain grillé.","J’ai goûté la même noisette de sauce et j’ai pleuré comme un enfant,","Elle a ri, a reniflé, et a trouvé ça doux."]},{"t":"poem","lines":["Maintenant, ils vont peut-être traverser l’Atlantique, vers le soleil de la Caroline,","Où il dira « sorry, mate » à tout le monde.","Mais un océan, ce n’est que de l’eau, et vous ne vous débarrasserez pas de moi,","Mate, mate, mate, mate, où que vous soyez."]},{"t":"poem","lines":["Alors, à vous deux, et à la vie que vous avez prévue,","Que vos skis restent les vôtres, et une Proper Job à la main."]},{"t":"toast","x":"Mesdames et Messieurs, veuillez lever vos verres à la mariée et au marié…"},{"t":"finale","x":"Elliot et Kelly !"}]}]};
+const DEFAULT_URL = "";
+const UI = {
+  en: {sub:'The Best Man’s Speech', by:'by Ash', love:'With love, Ash', card:'QR card', title:'Elliot & Kelly · The Best Man’s Speech'},
+  fr: {sub:'Le discours du témoin', by:'par Ash', love:'Avec amour, Ash', card:'Carte QR', title:'Elliot & Kelly · Le discours du témoin'}
+};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => s.replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function render(lang){
+  const L = UI[lang];
+  document.documentElement.lang = lang;
+  document.title = L.title;
+  $('#subtitle').textContent = L.sub;
+  $('#by').textContent = L.by;
+  $('#withlove').textContent = L.love;
+  $('#toCard').textContent = L.card;
+  $('#btn-en').setAttribute('aria-pressed', lang === 'en');
+  $('#btn-fr').setAttribute('aria-pressed', lang === 'fr');
+  const root = $('#speech');
+  let html = '';
+  DATA[lang].forEach((sec) => {
+    html += '<section class="sec"><h2>' + esc(sec.title) + '</h2>';
+    sec.items.forEach((it) => {
+      if (it.t === 'p') html += '<p>' + esc(it.x) + '</p>';
+      else if (it.t === 'poem') html += '<div class="poem">' + it.lines.map((l) => '<div>' + esc(l) + '</div>').join('') + '</div>';
+      else if (it.t === 'toast') html += '<p class="toast">' + esc(it.x) + '</p>';
+      else if (it.t === 'finale') html += '<p class="finale script">' + esc(it.x) + '</p>';
+    });
+    html += '</section>';
+  });
+  root.innerHTML = html;
+}
+
+function baseUrl(){
+  if (DEFAULT_URL) return DEFAULT_URL;
+  return location.origin + location.pathname + location.search;
+}
+function makeQR(url){
+  const el = $('#qr');
+  el.innerHTML = '';
+  if (!url) return;
+  try {
+    new QRCode(el, {text:url, width:260, height:260, colorDark:'#1d3b2f', colorLight:'#ffffff', correctLevel:QRCode.CorrectLevel.M});
+  } catch (e) {
+    el.style.lineHeight = '1.4';
+    el.style.maxWidth = '15rem';
+    el.style.wordBreak = 'break-all';
+    el.textContent = url;
+  }
+}
+
+function route(){
+  const h = (location.hash || '').slice(1);
+  if (h === 'card') {
+    document.body.classList.add('card-mode');
+    const input = $('#linkInput');
+    if (!input.value) input.value = baseUrl();
+    makeQR(input.value);
+  } else {
+    document.body.classList.remove('card-mode');
+    render(h === 'fr' ? 'fr' : 'en');
+  }
+  window.scrollTo(0, 0);
+}
+
+$('#btn-en').addEventListener('click', () => { location.hash = 'en'; });
+$('#btn-fr').addEventListener('click', () => { location.hash = 'fr'; });
+$('#toCard').addEventListener('click', () => { location.hash = 'card'; });
+$('#backBtn').addEventListener('click', () => { location.hash = 'en'; });
+$('#printBtn').addEventListener('click', () => { try { window.print(); } catch (e) {} });
+$('#linkInput').addEventListener('input', (e) => makeQR(e.target.value.trim()));
+window.addEventListener('hashchange', route);
+render('en');
+route();
+</script>
+</body>
+</html>
